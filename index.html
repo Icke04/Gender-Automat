@@ -2,25 +2,37 @@
 <html>
     <head>
         <link rel="icon" type="image/x-icon" href="/icon/icons8-gender-96.png">
+        <link rel="stylesheet" href="CSS/layout.css">
+        <link rel="stylesheet" href="CSS/navbar.css">
+        <link rel="stylesheet" href="CSS/content.css">
+        <link rel="stylesheet" href="CSS/footer.css">
         <title>Gender-Automat</title>
     </head>
     <body>
 
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="gender.html">Gender-Automat</a></li>
-                </ul>
-            </nav>
+        <header id="header">
+            <ul class="nav-items">
+                <li class="nav-item" id="home"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item" id="gender"><a class="nav-link" href="#">Gender-Automat</a></li>
+            </ul>
         </header>
 
-        <section>
-            <p>Wilkommen!</p>
-            <p>Das ist der Gender-Automat!</p>
+        <section id="content">
+            
         </section>
 
-        <footer></footer>
+        <footer id="footer">
+            <ul class="footer-items">
+                <li class="footer-item" id=""><a class="footer-link">&copy; - 2023 - Robin Ickemeyer</a></li>
+                <li class="footer-item" id="imprint"><a class="footer-link" href="#">Impressum</a></li>
+                <li class="footer-item" id="privacy"><a class="footer-link" href="#">Datenschutz</a></li>
+                <li class="footer-item" id="cookies"><a class="footer-link" href="#">Cookies & Tracking</a></li>
+                <li class="footer-item" id="termsofuse"><a class="footer-link" href="#">Nutzungsbedingungen</a></li>
+            </ul>
+        </footer>
 
     </body>
 </html>
+
+<script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+<script src="JavaScript/loadContent.js"></script>    

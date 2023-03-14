@@ -1,0 +1,37 @@
+#header{
+    width: 100%;
+    background-color: #336B87;
+}
+
+.nav-items{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.active{
+    background-color: #2A3132;
+}
+
+.nav-link{
+    display: block;
+    font-size: 25px;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+}
+
+.nav-item:hover{
+    background-color: #90AFC5;
+    transition-duration: 1.2s;
+    cursor: pointer;
+}
+
+@media all and (max-width: 1000px) {
+    .nav-items{
+        flex-flow: column wrap;
+    }
+}
