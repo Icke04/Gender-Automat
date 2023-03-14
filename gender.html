@@ -1,20 +1,30 @@
 <body>
 
-    <p>Hier wird gegendert!</p>
-
-    <textarea id="text1"></textarea>
-    <textarea id="text2"></textarea>
-    <textarea id="text3"></textarea>
+    <div class="flexRow">
+        <div class="box">
+            <h2>Anleitung 1</h2>
+            <textarea readonly class="textarea" id="text1"><script>console.log("Test");</script></textarea>
+            <p id="text1Ausgabe"></p>
+        </div>
     
-    <button id="textGendern">Gendern!</button>
+        <div class="box">
+            <h2>Anleitung 2</h2>
+            <textarea readonly class="textarea" id="text2">Der Arbeiter</textarea>
+            <p id="text2Ausgabe"></p>
+        </div>
+    
+        <div class="box">
+            <h2>Anleitung 3</h2>
+            <textarea readonly class="textarea" id="text3">Der Student</textarea>
+            <p id="text3Ausgabe"></p>
+        </div>
+    </div>
 
-    <p id="text1Ausgabe"></p>
-    <p id="text2Ausgabe"></p>
-    <p id="text3Ausgabe"></p>
-
-    <p id="ausgabe"></p>
-
-    <footer></footer>
+    <div class="flexRow">
+        <div class="box">
+            <button id="textGendern">Gendern!</button>
+        </div>
+    </div>
 
 </body>
 

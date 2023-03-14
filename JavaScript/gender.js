@@ -9,35 +9,48 @@ function splitString ($text)
 
     $.each($splittetString, function($characterIndex, $character){
 
-        if($character == " " || $character == "," || $character == "." || $character == "!" || $character == "?" || $character == "-")
+        if($returnWordArray.length == 1 && $returnWordArray[0] == "SQL Injection Detected")
         {
-
-            if($newWord != "")
-            {
-                $returnWordArray[$returnWordArrayCounter] = $newWord;
-                $returnWordArrayCounter++;
-                $newWord = "";
-            }
-
-            $returnWordArray[$returnWordArrayCounter] = $character;
-            $returnWordArrayCounter++;
-
-        }
-        else if ($splittetString.length - 1 == $characterIndex)
-        {
-
-            if($newWord != "")
-            {
-                $newWord += $character;
-                $returnWordArray[$returnWordArrayCounter] = $newWord;
-                $returnWordArrayCounter++;
-                $newWord = "";
-            }
-
+            return false;
         }
         else
         {
-            $newWord += $character; 
+            if($character == " " || $character == "," || $character == "." || $character == "!" || $character == "?" || $character == "-")
+            {
+
+                if($newWord != "")
+                {
+                    $returnWordArray[$returnWordArrayCounter] = $newWord;
+                    $returnWordArrayCounter++;
+                    $newWord = "";
+                }
+
+                $returnWordArray[$returnWordArrayCounter] = $character;
+                $returnWordArrayCounter++;
+
+            }
+            else if ($splittetString.length - 1 == $characterIndex)
+            {
+                if($newWord != "")
+                {
+                    $newWord += $character;
+                    $returnWordArray[$returnWordArrayCounter] = $newWord;
+                    $returnWordArrayCounter++;
+                    $newWord = "";
+                }
+
+            }
+            else
+            {
+                if($newWord.toUpperCase() == "&LT;SCRIPT&GT;"){
+                    $returnWordArray = [];
+                    $returnWordArray[0] = "SQL Injection Detected";
+                }
+                else
+                {
+                    $newWord += $character; 
+                }
+            }
         }
 
     });
@@ -53,9 +66,13 @@ $('#textGendern').click( function ()
     $text2 = $('#text2').val();
     $text3 = $('#text3').val();
 
-    $splitText1 = splitString($text1);
-    $splitText2 = splitString($text2);
-    $splitText3 = splitString($text3);
+    $encodedText1 = $('<textarea />').text($text1).html();
+    $encodedText2 = $('<textarea />').text($text2).html();
+    $encodedText3 = $('<textarea />').text($text3).html();
+
+    $splitText1 = splitString($encodedText1);
+    $splitText2 = splitString($encodedText2);
+    $splitText3 = splitString($encodedText3);
 
     $newText1 = [];
     $newText2 = [];

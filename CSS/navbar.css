@@ -33,5 +33,6 @@
 @media all and (max-width: 1000px) {
     .nav-items{
         flex-flow: column wrap;
+        font-size: 45px;
     }
 }
