@@ -91,7 +91,7 @@ $('#textGendern').click( function ()
     $textareas = ["#text1", "#text2", "#text3"];
 
     // Wörterbuch mit Wörtern, die im generischen Maskulinum sind
-    $generischesMaskulinum = ["Arbeiter", "Mitarbeiter", "Bauarbeiter", "Student", "Arbeiter", "Lehrer", "Mathematiker", "Tester"];
+    $generischesMaskulinum = ["Arbeiter", "Mitarbeiter", "Bauarbeiter", "Student", "Arbeiter", "Lehrer", "Mathematiker", "Tester", "Handwerker", "Heizungsinstallateur", "Klempner", "Baumarktmitarbeiter"];
 
     // Durch Ausgefelder iterieren und leeren
     $.each($textareas, function($textareaIndex, $textarea)

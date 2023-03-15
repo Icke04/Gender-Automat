@@ -17,6 +17,10 @@
 .box{
     text-align: center;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
 }
 
 h2{
@@ -24,6 +28,8 @@ h2{
 }
 
 .textarea{
+    text-align: left;
+    height: 300px;
     resize: none;
     width: 80%;
     border-radius: 10px;
@@ -39,7 +45,6 @@ h2{
 }
 
 #textGendern{
-    text-align: center;
     font-size: 25px;
     background-color: #336B87;
     color: white;
@@ -51,6 +56,16 @@ h2{
     cursor: pointer;
     background-color: #2A3132;
     transition-duration: 0.8s;
+}
+
+.output{
+    overflow-y: scroll;
+    scroll-behavior: auto;
+    max-height: 300px;
+    text-align: left;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid;
 }
 
 @media all and (max-width: 1000px) {
